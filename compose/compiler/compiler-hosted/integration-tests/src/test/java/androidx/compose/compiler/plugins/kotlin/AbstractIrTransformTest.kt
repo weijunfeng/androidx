@@ -61,6 +61,7 @@ import org.jetbrains.kotlin.resolve.AnalyzingUtils
 import org.jetbrains.kotlin.serialization.deserialization.descriptors.DeserializedContainerSource
 import org.jetbrains.kotlin.utils.addToStdlib.safeAs
 import java.io.File
+import org.jetbrains.kotlin.backend.common.serialization.DescriptorByIdSignatureFinderImpl
 
 @Suppress("LeakingThis")
 abstract class ComposeIrTransformTest : AbstractIrTransformTest() {
@@ -426,6 +427,7 @@ abstract class AbstractIrTransformTest : AbstractCodegenTest() {
                 generatorContext.moduleDescriptor,
                 generatorContext.symbolTable,
                 generatorContext.irBuiltIns,
+                DescriptorByIdSignatureFinderImpl(generatorContext.moduleDescriptor, mangler),
                 extensions
             )
             val frontEndContext = object : TranslationPluginContext {
@@ -445,7 +447,8 @@ abstract class AbstractIrTransformTest : AbstractCodegenTest() {
                 generatorContext.symbolTable,
                 frontEndContext,
                 stubGenerator,
-                mangler
+                mangler,
+                true
             )
 
             generatorContext.moduleDescriptor.allDependencyModules.map {
