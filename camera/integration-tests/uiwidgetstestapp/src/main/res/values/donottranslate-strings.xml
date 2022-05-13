@@ -22,6 +22,5 @@
     <string name="viewpager">ViewPager</string>
     <string name="viewpager2">ViewPager2</string>
     <string name="foldable">Foldable</string>
-    <string name="compose">Compose</string>
 
 </resources>

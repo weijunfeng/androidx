@@ -44,6 +44,9 @@ dependencies {
     implementation(libs.hiltAndroid)
     kapt(libs.hiltCompiler)
 
+    // Workaround https://github.com/google/dagger/issues/3383#issuecomment-1121189678 & b/234026950
+    kapt(libs.kotlinMetadataJvm)
+
     androidTestImplementation(libs.truth)
     androidTestImplementation(libs.testCore)
     androidTestImplementation(libs.testExtJunit)
