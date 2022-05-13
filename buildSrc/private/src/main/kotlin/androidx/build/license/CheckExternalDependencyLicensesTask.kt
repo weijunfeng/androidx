@@ -35,6 +35,10 @@ import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.named
 import org.gradle.work.DisableCachingByDefault
 import java.io.File
+import org.gradle.api.attributes.plugin.GradlePluginApiVersion
+
+
+
 
 /**
  * This task creates a configuration for the project that has all of its external dependencies
@@ -116,6 +120,7 @@ fun Project.configureExternalDependencyLicenseCheck() {
                         Usage.USAGE_ATTRIBUTE,
                         project.objects.named<Usage>(Usage.JAVA_RUNTIME)
                     )
+
                 }
 
                 project
