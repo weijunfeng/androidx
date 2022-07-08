@@ -16,20 +16,31 @@ jobs:
           java-version: '11'
           distribution: 'zulu'
       - name: "set output directory"
-        run: echo "::set-output name=output-dir::$(readlink -f .)/outputs"
+        run: |
+          echo "::set-output name=output-dir::$(readlink -f .)/outputs"
+          echo "::set-output name=log-file::$(readlink -f .)/ftl.logs"
         id: dirs
       - id: run_tests
-        uses: androidX/androidx-ci-action@dist-latest
+        uses: androidX/androidx-ci-action@dist-v0.08
         with:
           target-run-id: ${{ github.event.workflow_run.id }}
           gcp-token: ${{ secrets.GCP_SA_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           output-folder: ${{ steps.dirs.outputs.output-dir }}
+          log-file: ${{ steps.dirs.outputs.log-file }}
+          artifact-name-filter-regex: ".*apks"
+          gcp-bucket-name: "androidx-ftl-test-results"
+          gcp-bucket-path: "github-ci-action"
       - uses: actions/upload-artifact@v2
         if: always()
         with:
           name: outputs
           path: ${{ steps.dirs.outputs.output-dir }}
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: logs
+          path: ${{ steps.dirs.outputs.log-file }}
   teardown:
     runs-on: ubuntu-latest
     needs: [run_integration_tests]

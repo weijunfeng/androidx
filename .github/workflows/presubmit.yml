@@ -99,7 +99,7 @@ jobs:
 
           # Limit the size of the cache entry.
           # These directories contain instrumented/transformed dependency jars which can be reconstructed relatively quickly.
-          gradle-home-cache-excludes: | 
+          gradle-home-cache-excludes: |
             caches/jars-9
             caches/transforms-3
 
@@ -160,6 +160,15 @@ jobs:
         with:
           name: artifacts_${{ matrix.project }}
           path: ~/dist
+      - name: "Upload Apks"
+        # upload apks as a separate artifact so that the test runner does not
+        # have to download all artifacts to find them.
+        continue-on-error: true
+        if: ${{ steps.check-ci-config.outputs.enabled == 'true' }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts_${{ matrix.project }}_apks
+          path: ~/dist/**.apk
       - name: "Upload daemon logs"
         continue-on-error: true
         if: failure()
