@@ -70,4 +70,4 @@ runs:
         GRADLE_ENTERPRISE_ACCESS_KEY: ${{ inputs.gradle-enterprise-access-key }}
       working-directory: ${{ inputs.project-root }}
       shell: bash
-      run: gradle buildOnServer zipTestConfigsWithApks test ${{ inputs.gradle-flags }}
+      run: gradle buildOnServer zipTestConfigsWithApks test ${{ inputs.gradle-flags }} -Pandroid.overrideVersionCheck=true
