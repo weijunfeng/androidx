@@ -34,11 +34,13 @@ jobs:
           gcp-bucket-name: "androidx-ftl-test-results"
           gcp-bucket-path: "github-ci-action"
       - uses: actions/upload-artifact@v2
+        name: "Upload outputs"
         if: always()
         with:
           name: outputs
           path: ${{ steps.dirs.outputs.output-dir }}
       - uses: actions/upload-artifact@v2
+        name: "Upload logs"
         if: always()
         with:
           name: logs
