@@ -56,7 +56,6 @@ class AndroidXPlaygroundRootImplPlugin : Plugin<Project> {
         config = PlaygroundProperties.load(rootProject)
         repos = PlaygroundRepositories(config)
         rootProject.repositories.addPlaygroundRepositories()
-        GradleTransformWorkaround.maybeApply(rootProject)
         rootProject.subprojects {
             configureSubProject(it)
         }
