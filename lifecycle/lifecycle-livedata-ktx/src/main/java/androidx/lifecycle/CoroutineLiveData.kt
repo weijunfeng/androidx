@@ -356,7 +356,7 @@ internal class CoroutineLiveData<T>(
 public fun <T> liveData(
     context: CoroutineContext = EmptyCoroutineContext,
     timeoutInMs: Long = DEFAULT_TIMEOUT,
-    @BuilderInference block: suspend LiveDataScope<T>.() -> Unit
+    block: suspend LiveDataScope<T>.() -> Unit
 ): LiveData<T> = CoroutineLiveData(context, timeoutInMs, block)
 
 /**
@@ -468,7 +468,7 @@ public fun <T> liveData(
 public fun <T> liveData(
     context: CoroutineContext = EmptyCoroutineContext,
     timeout: Duration,
-    @BuilderInference block: suspend LiveDataScope<T>.() -> Unit
+    block: suspend LiveDataScope<T>.() -> Unit
 ): LiveData<T> = CoroutineLiveData(context, Api26Impl.toMillis(timeout), block)
 
 @RequiresApi(26)
