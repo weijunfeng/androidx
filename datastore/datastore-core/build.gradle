@@ -104,7 +104,7 @@ androidXMultiplatform {
             }
         }
 
-        androidTest {
+        androidUnitTest {
             dependsOn(jvmTest)
             dependencies {
                 implementation(libs.protobufLite)

@@ -91,7 +91,7 @@ if(AndroidXComposePlugin.isMultiplatformEnabled(project)) {
                 implementation(libs.kotlinCoroutinesTest)
             }
 
-            androidAndroidTest {
+            androidInstrumentedTest {
                 dependsOn(jvmTest)
                 dependencies {
                     implementation(libs.testExtJunit)
