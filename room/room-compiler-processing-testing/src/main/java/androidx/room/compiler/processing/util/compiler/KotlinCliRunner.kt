@@ -25,6 +25,7 @@ import org.jetbrains.kotlin.cli.common.ExitCode
 import org.jetbrains.kotlin.cli.common.arguments.K2JVMCompilerArguments
 import org.jetbrains.kotlin.cli.jvm.K2JVMCompiler
 import org.jetbrains.kotlin.compiler.plugin.ComponentRegistrar
+import org.jetbrains.kotlin.compiler.plugin.ExperimentalCompilerApi
 import org.jetbrains.kotlin.config.JvmDefaultMode
 import org.jetbrains.kotlin.config.JvmTarget
 
@@ -77,6 +78,7 @@ internal object KotlinCliRunner {
     /**
      * Runs the kotlin cli API with the given arguments.
      */
+    @OptIn(ExperimentalCompilerApi::class)
     fun runKotlinCli(
         /**
          * Compilation arguments (sources, classpaths etc)
@@ -89,6 +91,7 @@ internal object KotlinCliRunner {
         /**
          * List of component registrars for the compilation.
          */
+        @Suppress("DEPRECATION")
         pluginRegistrars: List<ComponentRegistrar>
     ): KotlinCliResult {
         val cliArguments = compiler.createArguments()

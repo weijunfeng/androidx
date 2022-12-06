@@ -131,7 +131,8 @@ dependencies {
     // collection-ktx transitively, which would lead to duplicate definition since the -ktx
     // extensions were moved into the main artifact.
     constraints {
-        jvmImplementation("androidx.collection:collection-ktx:1.3.0-alpha01")
+        // broke with Kotlin 1.8.0-Beta
+        // jvmImplementation("androidx.collection:collection-ktx:1.3.0-alpha01")
     }
 }
 
