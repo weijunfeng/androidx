@@ -72,6 +72,7 @@ androidXMultiplatform {
             dependencies {
                 api(libs.kotlinStdlib)
                 api(libs.kotlinCoroutinesCore)
+                implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
             }
         }
         jvmMain {
@@ -101,6 +102,9 @@ androidXMultiplatform {
                 implementation(libs.kotlinTest)
                 implementation(project(":internal-testutils-kmp"))
                 implementation(project(":internal-testutils-datastore"))
+
+                // Workaround bug in 1.8.0-RC, should be fixed in RC2, remove this line
+                implementation(libs.kotlinTestJunit)
             }
         }
 
@@ -112,6 +116,9 @@ androidXMultiplatform {
                 implementation(project(":internal-testutils-truth"))
                 implementation(libs.testRunner)
                 implementation(libs.testCore)
+
+                // Workaround bug in 1.8.0-RC, should be fixed in RC2, remove this line
+                implementation(libs.kotlinTestJunit)
             }
         }
 

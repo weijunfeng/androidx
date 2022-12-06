@@ -34,6 +34,7 @@ dependencies {
     api(libs.kotlinCoroutinesAndroid)
 
     implementation("androidx.core:core:1.1.0")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     api(project(":compose:runtime:runtime"))
     api(project(":glance:glance-wear-tiles"))

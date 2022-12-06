@@ -74,6 +74,7 @@ dependencies {
     // but it doesn't work in androidx.
     implementation("androidx.lifecycle:lifecycle-common-java8:2.5.1")
     compileOnly(libs.kotlinCompiler)
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     // Lifecycle and LiveData
     implementation("androidx.lifecycle:lifecycle-livedata:2.2.0")

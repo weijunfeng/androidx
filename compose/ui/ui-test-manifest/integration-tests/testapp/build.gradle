@@ -26,6 +26,7 @@ dependencies {
     debugImplementation(project(":compose:ui:ui-test-manifest"))
 
     implementation(project(":compose:ui:ui"))
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     androidTestImplementation(project(":compose:ui:ui-test-junit4"))
     androidTestImplementation(libs.testRunner)
     androidTestImplementation(libs.testCore)

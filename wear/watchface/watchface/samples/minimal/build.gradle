@@ -25,6 +25,7 @@ dependencies {
     api(project(":wear:watchface:watchface"))
     api(project(":wear:watchface:watchface-guava"))
     implementation(libs.guavaAndroid)
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 }
 
 androidx {

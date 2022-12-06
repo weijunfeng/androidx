@@ -33,6 +33,7 @@ dependencies {
     implementation(libs.guavaAndroid)
     implementation(projectOrArtifact(":recyclerview:recyclerview"))
     implementation(libs.material)
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     androidTestImplementation(libs.testCore)
     androidTestImplementation(libs.testExtJunit)

@@ -19,6 +19,7 @@ dependencies {
     implementation("androidx.collection:collection:1.0.0")
     implementation("androidx.concurrent:concurrent-futures:1.0.0")
     implementation("androidx.interpolator:interpolator:1.0.0")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     // Required for -Werror due to annotation-experimental use of Kotlin
     compileOnly(libs.kotlinStdlib)

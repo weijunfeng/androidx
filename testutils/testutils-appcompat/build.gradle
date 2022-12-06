@@ -27,6 +27,8 @@ dependencies {
     api(project(":appcompat:appcompat"))
     api(project(":annotation:annotation-experimental"))
 
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+
     implementation(libs.testExtJunit)
     implementation(libs.testCore)
     implementation(libs.testRules)

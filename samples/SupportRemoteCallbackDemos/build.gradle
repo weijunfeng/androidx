@@ -24,6 +24,7 @@ dependencies {
     implementation(project(":recyclerview:recyclerview"))
     implementation(project(":appcompat:appcompat"))
     annotationProcessor(project(":remotecallback:remotecallback-processor"))
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 }
 
 android {

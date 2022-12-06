@@ -37,6 +37,7 @@ if (!AndroidXComposePlugin.isMultiplatformEnabled(project)) {
         api("androidx.compose.ui:ui:1.2.1")
         implementation("androidx.compose.runtime:runtime:1.2.1")
         implementation(libs.kotlinStdlib)
+        implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
         samples(project(":compose:material:material-icons-core:material-icons-core-samples"))
     }
@@ -58,6 +59,7 @@ if (AndroidXComposePlugin.isMultiplatformEnabled(project)) {
             commonMain.dependencies {
                 implementation(libs.kotlinStdlibCommon)
                 api(project(":compose:ui:ui"))
+                implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
             }
 
             androidMain.dependencies {

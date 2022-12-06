@@ -7,6 +7,7 @@ plugins {
 dependencies {
     api("androidx.annotation:annotation:1.0.1")
     api(libs.autoValueAnnotations)
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     testImplementation(libs.testCore)
     testImplementation(libs.testRunner)
     annotationProcessor(libs.autoValue)

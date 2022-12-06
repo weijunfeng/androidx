@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":wear:compose:compose-foundation-samples"))
     implementation(project(":wear:compose:compose-material-samples"))
     implementation(project(':wear:compose:compose-navigation'))
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     // old version of common-java8 conflicts with newer version, because both have
     // DefaultLifecycleEventObserver.
     // Outside of androidx this is resolved via constraint added to lifecycle-common,

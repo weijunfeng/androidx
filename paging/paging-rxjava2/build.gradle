@@ -29,6 +29,7 @@ dependencies {
     api(libs.rxjava2)
     implementation(libs.kotlinStdlib)
     implementation(libs.kotlinCoroutinesRx2)
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     testImplementation(project(":internal-testutils-common"))
     testImplementation(project(":internal-testutils-paging"))

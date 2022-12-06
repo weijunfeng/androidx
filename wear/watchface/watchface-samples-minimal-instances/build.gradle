@@ -31,6 +31,7 @@ dependencies {
     api(project(":wear:wear"))
     implementation(libs.guavaAndroid)
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 }
 
 androidx {

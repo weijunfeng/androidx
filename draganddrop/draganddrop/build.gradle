@@ -28,6 +28,7 @@ dependencies {
     annotationProcessor(libs.nullaway)
     androidTestImplementation(libs.robolectric)
     androidTestImplementation(libs.mockitoAndroid)
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     androidTestImplementation(libs.testExtJunit)
     androidTestImplementation(libs.testCore)

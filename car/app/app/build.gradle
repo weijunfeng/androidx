@@ -53,6 +53,7 @@ dependencies {
     implementation("androidx.annotation:annotation:1.2.0")
     implementation("androidx.core:core:1.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.2.0")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     // Session and Screen both implement LifeCycleOwner so this needs to be exposed.
     api("androidx.lifecycle:lifecycle-common-java8:2.2.0")
     api("androidx.annotation:annotation-experimental:1.1.0")

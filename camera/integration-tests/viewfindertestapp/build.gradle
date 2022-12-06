@@ -42,6 +42,7 @@ android {
 
 dependencies {
     implementation("androidx.concurrent:concurrent-futures-ktx:1.1.0")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     // Internal library
     implementation(project(":camera:camera-camera2"))

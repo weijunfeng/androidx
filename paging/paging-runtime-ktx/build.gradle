@@ -26,6 +26,7 @@ dependencies {
     api(project(":paging:paging-runtime"))
     // Ensure that the -ktx dependency graph mirrors the Java dependency graph
     implementation(project(":paging:paging-common-ktx"))
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 }
 
 androidx {

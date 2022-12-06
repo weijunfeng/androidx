@@ -67,6 +67,8 @@ dependencies {
     // Needed because AGP enforces same version between main and androidTest classpaths
     implementation(project(":concurrent:concurrent-futures"))
 
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+
     // Android Support Library
     api(libs.constraintLayout)
     implementation(libs.guavaAndroid)

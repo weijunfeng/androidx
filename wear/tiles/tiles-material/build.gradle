@@ -28,6 +28,7 @@ dependencies {
     api("androidx.annotation:annotation:1.2.0")
     implementation(project(":wear:tiles:tiles"))
     implementation(project(":wear:tiles:tiles-proto"))
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.testCore)

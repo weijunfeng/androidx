@@ -28,6 +28,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation(libs.robolectric)
     implementation("androidx.annotation:annotation-experimental:1.1.0")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     // There is an implicit compile-only dep due to :annotation-experimental
     // Build will complain without this manual declaration.
     compileOnly libs.kotlinStdlib
