@@ -67,6 +67,7 @@ import org.gradle.api.JavaVersion.VERSION_1_8
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
+import org.gradle.api.artifacts.UnknownConfigurationException
 import org.gradle.api.component.SoftwareComponentFactory
 import org.gradle.api.file.DuplicatesStrategy
 import org.gradle.api.plugins.JavaPlugin
@@ -271,6 +272,16 @@ class AndroidXImplPlugin @Inject constructor(val componentFactory: SoftwareCompo
         plugin: KotlinBasePluginWrapper
     ) {
         project.afterEvaluate {
+            try {
+                // https://youtrack.jetbrains.com/issue/KT-55297
+                project.dependencies.add(
+                    "implementation",
+                    project.dependencies.platform("org.jetbrains.kotlin:kotlin-bom:1.8.0")
+                )
+            } catch (e: UnknownConfigurationException) {
+                /* nothing to do */
+            }
+
             project.tasks.withType(KotlinCompile::class.java).configureEach { task ->
                 if (extension.type.compilationTarget == CompilationTarget.HOST &&
                     extension.type != LibraryType.ANNOTATION_PROCESSOR_UTILS
