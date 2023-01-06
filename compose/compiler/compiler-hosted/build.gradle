@@ -24,8 +24,8 @@ plugins {
 }
 
 dependencies {
-    compileOnly(libs.kotlinStdlib)
-    compileOnly(libs.kotlinCompiler)
+    compileOnly("org.jetbrains.kotlin:kotlin-stdlib:1.8.20-dev-345")
+    compileOnly("org.jetbrains.kotlin:kotlin-compiler:1.8.20-dev-345")
 
     testImplementation(libs.kotlinStdlib)
     testImplementation(libs.junit)

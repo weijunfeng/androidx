@@ -204,7 +204,7 @@ class ComposeComponentRegistrar :
 
     companion object {
         fun checkCompilerVersion(configuration: CompilerConfiguration): Boolean {
-            val KOTLIN_VERSION_EXPECTATION = "1.8.0"
+            val KOTLIN_VERSION_EXPECTATION = "1.8.20-dev-345"
             KotlinCompilerVersion.getVersion()?.let { version ->
                 val msgCollector = configuration.get(CLIConfigurationKeys.MESSAGE_COLLECTOR_KEY)
                 val suppressKotlinVersionCheck = configuration.get(
