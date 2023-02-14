@@ -130,6 +130,7 @@ public interface CanvasComplication {
      * @param zonedDateTime The [ZonedDateTime] to render the highlight with
      * @param color The color to render the highlight with
      */
+    @Suppress("UnavailableSymbol")
     @ComplicationExperimental
     public fun drawHighlight(
         canvas: Canvas,
@@ -137,6 +138,7 @@ public interface CanvasComplication {
         @ComplicationSlotBoundsType boundsType: Int,
         zonedDateTime: ZonedDateTime,
         @ColorInt color: Int,
+        @Suppress("HiddenTypeParameter")
         boundingArc: BoundingArc?
     ) {
         drawHighlight(canvas, bounds, boundsType, zonedDateTime, color)
@@ -502,6 +504,7 @@ internal constructor(
          * @param bounds The complication's [ComplicationSlotBounds].
          */
         @JvmStatic
+        @OptIn(ComplicationExperimental::class)
         public fun createRoundRectComplicationSlotBuilder(
             id: Int,
             canvasComplicationFactory: CanvasComplicationFactory,
@@ -538,6 +541,7 @@ internal constructor(
          *   the initial complication data source when the watch is first installed.
          */
         @JvmStatic
+        @OptIn(ComplicationExperimental::class)
         public fun createBackgroundComplicationSlotBuilder(
             id: Int,
             canvasComplicationFactory: CanvasComplicationFactory,
@@ -584,6 +588,7 @@ internal constructor(
          */
         // TODO(b/230364881): Deprecate when BoundingArc is no longer experimental.
         @JvmStatic
+        @OptIn(ComplicationExperimental::class)
         public fun createEdgeComplicationSlotBuilder(
             id: Int,
             canvasComplicationFactory: CanvasComplicationFactory,
@@ -623,12 +628,14 @@ internal constructor(
         @JvmStatic
         @JvmOverloads
         @ComplicationExperimental
+        @Suppress("UnavailableSymbol")
         public fun createEdgeComplicationSlotBuilder(
             id: Int,
             canvasComplicationFactory: CanvasComplicationFactory,
             supportedTypes: List<ComplicationType>,
             defaultDataSourcePolicy: DefaultComplicationDataSourcePolicy,
             bounds: ComplicationSlotBounds,
+            @Suppress("HiddenTypeParameter")
             boundingArc: BoundingArc,
             complicationTapFilter: ComplicationTapFilter =
                 object : ComplicationTapFilter {
