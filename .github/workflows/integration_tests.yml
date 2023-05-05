@@ -19,12 +19,16 @@ jobs:
         run: echo "::set-output name=output-dir::$(readlink -f .)/outputs"
         id: dirs
       - id: run_tests
-        uses: androidX/androidx-ci-action@dist-latest
+        uses: androidX/androidx-ci-action@dist-v0.10
         with:
           target-run-id: ${{ github.event.workflow_run.id }}
           gcp-token: ${{ secrets.GCP_SA_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           output-folder: ${{ steps.dirs.outputs.output-dir }}
+          gcp-bucket-name: "androidx-ftl-test-results"
+          gcp-bucket-path: "github-ci-action"
+          log-file: ${{ steps.dirs.outputs.output-dir }}/ftl-logs.txt
+          device-specs: Pixel2.arm:30
       - uses: actions/upload-artifact@v2
         if: always()
         with:
