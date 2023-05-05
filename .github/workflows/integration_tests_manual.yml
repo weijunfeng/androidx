@@ -19,7 +19,7 @@ jobs:
         run: echo "::set-output name=output-dir::$(readlink -f .)/outputs"
         id: dirs
       - id: run_tests
-        uses: androidX/androidx-ci-action@dist-v0.11
+        uses: androidX/androidx-ci-action@yigit/test-scheduler
         with:
           target-run-id: 4896435090
           gcp-token: ${{ secrets.GCP_SA_KEY }}
@@ -28,7 +28,8 @@ jobs:
           gcp-bucket-name: "androidx-ftl-test-results"
           gcp-bucket-path: "github-ci-action"
           log-file: ${{ steps.dirs.outputs.output-dir }}/ftl-logs.txt
-          device-specs: Pixel3:30
+          device-specs: Pixel2.arm:30
+          use-test-config-files: true
       - uses: actions/upload-artifact@v2
         if: always()
         with:
