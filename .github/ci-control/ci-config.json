@@ -11,9 +11,9 @@
         "default": false
     },
     "main" : {
-        "exclude" : [
-          "room"
+        "include" : [
+          "datastore"
         ],
-        "default": true
+        "default": false
     }
 }
