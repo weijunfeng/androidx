@@ -28,7 +28,7 @@ jobs:
           gcp-bucket-name: "androidx-ftl-test-results"
           gcp-bucket-path: "github-ci-action"
           log-file: ${{ steps.dirs.outputs.output-dir }}/ftl-logs.txt
-          device-specs: Pixel2.arm:30
+          device-specs: Pixel3:30
           use-test-config-files: true
       - uses: actions/upload-artifact@v2
         if: always()
