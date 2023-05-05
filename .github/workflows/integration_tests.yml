@@ -1,3 +1,11 @@
+# This action runs after a build is complete and tests its apks on Firebase
+# Test Lab.
+# Due to the security reasons, it is only triggered from the main branch
+# and has access secrets. If you need to make changes and test them, you
+# need to create a custom run and hardcode the workflow id into the
+# `target-test-run` parameter. A sample build file can be found in the
+# following commit:
+# https://github.com/androidx/androidx/blob/yigit/update-ci-action/.github/workflows/integration_tests_manual.yml
 name: Run Integration Tests
 on:
   workflow_run:
@@ -28,7 +36,7 @@ jobs:
           gcp-bucket-name: "androidx-ftl-test-results"
           gcp-bucket-path: "github-ci-action"
           log-file: ${{ steps.dirs.outputs.output-dir }}/ftl-logs.txt
-          device-specs: Pixel2.arm:30
+          device-specs: Pixel3:30 # move to Pixel2.arm:30 when we disable benchmarks
       - uses: actions/upload-artifact@v2
         if: always()
         with:
