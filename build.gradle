@@ -19,7 +19,7 @@ import androidx.build.SdkHelperKt
 
 buildscript {
     SdkHelperKt.setSupportRootFolder(project, project.projectDir)
-    SdkHelperKt.writeSdkPathToLocalPropertiesFile(project)
+//    SdkHelperKt.writeSdkPathToLocalPropertiesFile(project)
 }
 
 apply from: "buildSrc/dependencies.gradle"

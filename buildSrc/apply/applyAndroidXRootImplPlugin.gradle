@@ -6,4 +6,4 @@ buildscript {
     }
 }
 
-apply plugin: AndroidXRootImplPlugin
+//apply plugin: AndroidXRootImplPlugin

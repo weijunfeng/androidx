@@ -19,7 +19,7 @@ import androidx.build.Publish
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("AndroidXPlugin")
+//    id("AndroidXPlugin")
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
@@ -29,26 +29,26 @@ dependencies {
     api(project(":lifecycle:lifecycle-livedata-core-ktx"))
     api(libs.kotlinStdlib)
     api(libs.kotlinCoroutinesCore)
-    testImplementation(project(":lifecycle:lifecycle-runtime-testing"))
-    testImplementation("androidx.arch.core:core-testing:2.1.0")
-    testImplementation(libs.junit)
-    testImplementation(libs.truth)
-    testImplementation(libs.kotlinCoroutinesTest)
-    androidTestImplementation(libs.truth)
-    androidTestImplementation(libs.testExtJunit)
-    androidTestImplementation(libs.testCore)
-    androidTestImplementation(libs.testRules)
-    androidTestImplementation(libs.testRunner)
-    androidTestImplementation(libs.kotlinCoroutinesTest)
-    androidTestImplementation(libs.kotlinCoroutinesAndroid)
+//    testImplementation(project(":lifecycle:lifecycle-runtime-testing"))
+//    testImplementation("androidx.arch.core:core-testing:2.1.0")
+//    testImplementation(libs.junit)
+//    testImplementation(libs.truth)
+//    testImplementation(libs.kotlinCoroutinesTest)
+//    androidTestImplementation(libs.truth)
+//    androidTestImplementation(libs.testExtJunit)
+//    androidTestImplementation(libs.testCore)
+//    androidTestImplementation(libs.testRules)
+//    androidTestImplementation(libs.testRunner)
+//    androidTestImplementation(libs.kotlinCoroutinesTest)
+//    androidTestImplementation(libs.kotlinCoroutinesAndroid)
 }
-
-androidx {
-    name = "LiveData Kotlin Extensions"
-    publish = Publish.SNAPSHOT_AND_RELEASE
-    inceptionYear = "2018"
-    description = "Kotlin extensions for 'livedata' artifact"
-}
+//
+//androidx {
+//    name = "LiveData Kotlin Extensions"
+//    publish = Publish.SNAPSHOT_AND_RELEASE
+//    inceptionYear = "2018"
+//    description = "Kotlin extensions for 'livedata' artifact"
+//}
 
 android {
     namespace "androidx.lifecycle.livedata.ktx"
